@@ -14,24 +14,38 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
+  	include( dirname( __FILE__ ) . '/local-config.php' );
+  	define( 'WP_LOCAL_DEV', true ); // We'll talk about this later
+} else {
+	// ** MySQL settings - You can get this info from your web host ** //
+	/** The name of the database for WordPress */
+	define('DB_NAME', 'database_name_here');
 
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+	/** MySQL database username */
+	define('DB_USER', 'username_here');
 
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'password_here');
 
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+	/** MySQL hostname */
+	define('DB_HOST', 'localhost');
+
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
+}
+
+/* defined after managed by git */
+define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
+define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
+define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
+
 
 /**#@+
  * Authentication Unique Keys and Salts.
