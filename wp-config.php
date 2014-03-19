@@ -14,8 +14,6 @@
  * @package WordPress
  */
 
-
-
 if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
   	include( dirname( __FILE__ ) . '/local-config.php' );
   	define( 'WP_LOCAL_DEV', true ); // We'll talk about this later
@@ -92,7 +90,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -101,4 +99,4 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
-require_once(ABSPATH . 'wp-settings.php');
+require_once(ABSPATH . '/wp-settings.php');
