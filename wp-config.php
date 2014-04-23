@@ -14,10 +14,11 @@
  * @package WordPress
  */
 
-if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
-  	include( dirname( __FILE__ ) . '/local-config.php' );
-  	define( 'WP_LOCAL_DEV', true ); // We'll talk about this later
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-production.php' ) ) {
+  	include( dirname( __FILE__ ) . '/wp-config-production.php' );
 } else {
+ 	define( 'WP_LOCAL_DEV', true ); // We'll talk about this later
+
 	// ** MySQL settings - You can get this info from your web host ** //
 	/** The name of the database for WordPress */
 	define('DB_NAME', 'database_name_here');
