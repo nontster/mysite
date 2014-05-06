@@ -5,6 +5,12 @@
 !index.php
 !wp-config.php
 !wp-content/
+
+# Capistrano
+!Capfile
+!config
+config/*
+!config/deploy.rb
  
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
