@@ -82,6 +82,6 @@ namespace :wp do
 	end
 end
 
-#after "deploy:create_symlink", "wp:create_symlinks"
-#after "deploy:setup", "wp:setup"
+after "deploy:create_symlink", "wp:create_symlinks"
+after "deploy:setup", "wp:setup"
 
